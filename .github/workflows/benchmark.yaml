@@ -1,0 +1,45 @@
+name: Benchmark
+
+on:
+  push:
+
+permissions:
+  contents: write
+  deployments: true
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        zod:
+          - npm:zod
+          - npm:zod@3.2.0
+          - npm:myzod
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm add zod@${{ matrix.zod }}
+
+      - run: pnpm run benchmark | tee output.txt
+
+      - uses: benchmark-action/github-action-benchmark@v1
+        with:
+          name: ${{ matrix.zod }} Benchmark
+          tool: benchmarkjs
+          output-file-path: output.txt
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: true
+          comment-on-alert: true
+          fail-on-alert: true
