@@ -40,6 +40,7 @@ jobs:
           tool: benchmarkjs
           output-file-path: output.txt
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          benchmark-data-dir-path: dev/bench/${{ matrix.zod }}
           auto-push: true
           comment-on-alert: true
           fail-on-alert: true
