@@ -45,3 +45,5 @@ jobs:
           auto-push: true
           comment-on-alert: true
           fail-on-alert: true
+
+      - run: echo '### ${{ matrix.zod }}\n\n$(cat output.txt)' >> $GITHUB_STEP_SUMMARY
