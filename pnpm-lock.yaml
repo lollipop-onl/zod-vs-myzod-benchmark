@@ -8,9 +8,12 @@ importers:
 
   .:
     dependencies:
-      zod:
-        specifier: ^4.0.16
-        version: 4.0.16
+      zod-3:
+        specifier: npm:zod@3.25.76
+        version: zod@3.25.76
+      zod-4:
+        specifier: npm:zod@4.0.16
+        version: zod@4.0.16
     devDependencies:
       '@tsconfig/node-ts':
         specifier: ^23.6.1
@@ -234,6 +237,9 @@ packages:
   undici-types@7.10.0:
     resolution: {integrity: sha512-t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag==}
 
+  zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+
   zod@4.0.16:
     resolution: {integrity: sha512-Djo/cM339grjI7/HmN+ixYO2FzEMcWr/On50UlQ/RjrWK1I/hPpWhpC76heCptnRFpH0LMwrEbUY50HDc0V8wg==}
 
@@ -382,5 +388,7 @@ snapshots:
       fsevents: 2.3.3
 
   undici-types@7.10.0: {}
+
+  zod@3.25.76: {}
 
   zod@4.0.16: {}

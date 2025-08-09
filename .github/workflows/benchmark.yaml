@@ -14,9 +14,10 @@ jobs:
       fail-fast: false
       matrix:
         zod:
-          - npm:zod
-          - npm:zod@3.2.0
-          - npm:myzod
+          - zod-4@npm:zod@4.0.16
+          - zod-3@npm:zod@3.25.76
+          - zod-3@npm:zod@3.2.0
+          - zod-3@npm:myzod@1.12.1
     steps:
       - uses: actions/checkout@v4
 
@@ -31,9 +32,11 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - run: pnpm add zod@${{ matrix.zod }}
+      - run: pnpm add ${{ matrix.zod }}
 
       - run: pnpm run benchmark | tee output.txt
+        env:
+
 
       - run: |
           echo "### ${{ matrix.zod}}" >> $GITHUB_STEP_SUMMARY
