@@ -5,7 +5,7 @@ on:
 
 permissions:
   contents: write
-  deployments: true
+  deployments: write
 
 jobs:
   benchmark:
