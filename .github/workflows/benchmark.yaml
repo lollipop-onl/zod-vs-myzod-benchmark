@@ -39,7 +39,6 @@ jobs:
           ZOD_VERSION: ${{ matrix.zod }}
 
       - run: |
-          echo '### ${{ matrix.zod}}' >> $GITHUB_STEP_SUMMARY
           echo "`\`\`\" >> $GITHUB_STEP_SUMMARY
           cat output.txt >> $GITHUB_STEP_SUMMARY
           echo "`\`\`\" >> $GITHUB_STEP_SUMMARY
