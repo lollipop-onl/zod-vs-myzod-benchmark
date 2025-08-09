@@ -1,4 +1,9 @@
-import z from 'zod-3';
+import type Zod from 'zod-3'
+
+const zodLib = await import('zod-3');
+
+// @ts-expect-error
+const z: Zod = 'z' in zodLib ? zodLib.z : zodLib.default;
 
 // --- String ---
 export const stringSchema = z.string();
