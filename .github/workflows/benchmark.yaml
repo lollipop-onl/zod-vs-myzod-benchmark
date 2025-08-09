@@ -36,6 +36,6 @@ jobs:
       - run: pnpm run benchmark | tee output.txt
 
       - run: echo "### ${{ matrix.zod}}" >> $GITHUB_STEP_SUMMARY
-      - run: echo "```" >> $GITHUB_STEP_SUMMARY
+      - run: echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
       - run: cat output.txt >> $GITHUB_STEP_SUMMARY
-      - run: echo "```" >> $GITHUB_STEP_SUMMARY
+      - run: echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
