@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "benchmark": "tsx src/parsing.benchmark.ts"
+  },
+  "devDependencies": {
+    "@tsconfig/node-ts": "^23.6.1",
+    "@tsconfig/node24": "^24.0.1",
+    "@types/benchmark": "^2.1.5",
+    "benchmark": "^2.1.4",
+    "tsx": "^4.20.3"
+  },
+  "dependencies": {
+    "zod": "^4.0.16"
+  }
+}
