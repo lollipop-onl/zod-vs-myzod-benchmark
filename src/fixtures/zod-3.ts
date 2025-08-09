@@ -1,4 +1,4 @@
-import {z} from 'zod-3';
+import z from 'zod-3';
 
 // --- String ---
 export const stringSchema = z.string();
