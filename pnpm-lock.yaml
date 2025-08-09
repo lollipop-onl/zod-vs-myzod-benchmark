@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       zod:
-        specifier: ^4.0.16
-        version: 4.0.16
+        specifier: npm:myzod@^1.12.1
+        version: myzod@1.12.1
     devDependencies:
       '@tsconfig/node-ts':
         specifier: ^23.6.1
@@ -21,6 +21,9 @@ importers:
       '@types/benchmark':
         specifier: ^2.1.5
         version: 2.1.5
+      '@types/node':
+        specifier: ^24.2.1
+        version: 24.2.1
       benchmark:
         specifier: ^2.1.4
         version: 2.1.4
@@ -195,6 +198,9 @@ packages:
   '@types/benchmark@2.1.5':
     resolution: {integrity: sha512-cKio2eFB3v7qmKcvIHLUMw/dIx/8bhWPuzpzRT4unCPRTD8VdA9Zb0afxpcxOqR4PixRS7yT42FqGS8BYL8g1w==}
 
+  '@types/node@24.2.1':
+    resolution: {integrity: sha512-DRh5K+ka5eJic8CjH7td8QpYEV6Zo10gfRkjHCO3weqZHWDtAaSTFtl4+VMqOJ4N5jcuhZ9/l+yy8rVgw7BQeQ==}
+
   benchmark@2.1.4:
     resolution: {integrity: sha512-l9MlfN4M1K/H2fbhfMy3B7vJd6AGKJVQn2h6Sg/Yx+KckoUA7ewS5Vv6TjSq18ooE1kS9hhAlQRH3AkXIh/aOQ==}
 
@@ -214,6 +220,9 @@ packages:
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
 
+  myzod@1.12.1:
+    resolution: {integrity: sha512-gcn8HEJ8g247z9EiC3IIuadaUBl3dbn+G7sD5Y3fc00rTy32sNc+HOCRRrt9fu+yCGzeQe5leSmG2k0+TmsnSQ==}
+
   platform@1.3.6:
     resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
 
@@ -225,8 +234,8 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  zod@4.0.16:
-    resolution: {integrity: sha512-Djo/cM339grjI7/HmN+ixYO2FzEMcWr/On50UlQ/RjrWK1I/hPpWhpC76heCptnRFpH0LMwrEbUY50HDc0V8wg==}
+  undici-types@7.10.0:
+    resolution: {integrity: sha512-t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag==}
 
 snapshots:
 
@@ -314,6 +323,10 @@ snapshots:
 
   '@types/benchmark@2.1.5': {}
 
+  '@types/node@24.2.1':
+    dependencies:
+      undici-types: 7.10.0
+
   benchmark@2.1.4:
     dependencies:
       lodash: 4.17.21
@@ -357,6 +370,8 @@ snapshots:
 
   lodash@4.17.21: {}
 
+  myzod@1.12.1: {}
+
   platform@1.3.6: {}
 
   resolve-pkg-maps@1.0.0: {}
@@ -368,4 +383,4 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  zod@4.0.16: {}
+  undici-types@7.10.0: {}
