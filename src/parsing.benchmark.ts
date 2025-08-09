@@ -3,7 +3,7 @@ import Benchmark from 'benchmark';
 // ベンチマークスイートを作成
 const suite = new Benchmark.Suite('Zod Parsing Benchmarks');
 
-const fixtures = process.env.ZOD_VERSION?.startsWith('npm:zod@4')
+const fixtures = process.env.ZOD_VERSION?.includes('npm:zod@4')
   ? await import('./fixtures/zod-4')
     : await import('./fixtures/zod-3');
 

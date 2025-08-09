@@ -36,7 +36,7 @@ jobs:
 
       - run: pnpm run benchmark | tee output.txt
         env:
-
+          ZOD_VERSION: ${{ matrix.zod }}
 
       - run: |
           echo "### ${{ matrix.zod}}" >> $GITHUB_STEP_SUMMARY
