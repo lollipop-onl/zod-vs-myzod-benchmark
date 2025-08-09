@@ -33,17 +33,6 @@ jobs:
 
       - run: pnpm add zod@${{ matrix.zod }}
 
-      - run: pnpm run benchmark | tee output.txt
+      - run: echo "### ${{ matrix.zod}}" >> $GITHUB_STEP_SUMMARY
 
-      - uses: benchmark-action/github-action-benchmark@v1
-        with:
-          name: ${{ matrix.zod }} Benchmark
-          tool: benchmarkjs
-          output-file-path: output.txt
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          benchmark-data-dir-path: dev/bench/${{ matrix.zod }}
-          auto-push: true
-          comment-on-alert: true
-          fail-on-alert: true
-
-      - run: echo '### ${{ matrix.zod }}\n\n$(cat output.txt)' >> $GITHUB_STEP_SUMMARY
+      - run: pnpm run benchmark >> $GITHUB_STEP_SUMMARY
